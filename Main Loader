@@ -1,0 +1,9 @@
+-- Lifting Legends
+if game.PlaceId == 5709572883 then 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Jovan12451/eee/main/dwqqwd"))()
+end
+
+--Doors Race
+if game.PlaceId == 11153589280 then 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Jovan12451/ee/main/Script12"))()
+end
