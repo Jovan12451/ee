@@ -1,0 +1,64 @@
+--DOORS Race
+--Local
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "💪 Lift Legends Simulator", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+--Local
+
+_G.AutoClick = true
+_G.Teleport12 = true
+
+--Tab
+
+local Tab = Window:MakeTab({
+	Name = "Farming",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Pets (Coming soon)",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+-- Function
+
+
+function autotap()
+    while _G.AutoClick == true do
+    game:GetService("ReplicatedStorage").Clickspeed:InvokeServer()
+	wait(0.5)
+    end
+end
+
+
+function Teleporttoend()
+	while _G.Teleport12 == true do
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-900407.25, -12.7859859, 441.135834, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+		wait(0.5)
+	end
+end
+
+
+--Toggle
+
+Tab:AddToggle({
+	Name = "Auto Click",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+        _G.AutoClick = Value
+        autotap()
+	end
+})
+
+Tab:AddToggle({
+	Name = "Teleport to end",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+        _G.Teleport12 = Value
+        Teleporttoend()
+	end
+})
